@@ -2,8 +2,9 @@ const { Router } = require("express");
 const router = Router();
 const { allInfo } = require("../controllers/get_dogs");
 
-router.get("/", async (req, res) => {
+router.get("/query", async (req, res) => {
   const { name } = req.query;
+  console.log(`name: ${name}`);
   try {
     const apiInfo = await allInfo();
     const nameDog = apiInfo.filter((element) =>
@@ -16,5 +17,5 @@ router.get("/", async (req, res) => {
     res.status(404).send("No se encontro el pichichus");
   }
 });
-
+  
 module.exports = router;
