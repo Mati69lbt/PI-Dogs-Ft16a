@@ -1,0 +1,69 @@
+
+.cardstwo{  
+   border: 3px red;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 5px;
+   text-decoration: none;  
+   justify-content: center;
+ 
+}
+
+.paquetes{
+   display: flex;
+   justify-content: center;
+   border: 1px solid red;
+   
+}
+
+.ordenABC {
+   margin: 5px;
+   
+   width: auto;
+}
+
+.ordenkgs {
+   margin: 5px;
+  
+   width: 10%;
+}
+
+.filtertemp {
+   margin: 5px;
+   
+}
+
+.creados {
+   margin: 5px;
+   
+}
+
+.searchbar{
+   margin: 5px;
+   
+   display: flow-root;
+   align-self: end;
+}
+
+.arriba{
+   display: flex;
+   justify-content: center;
+   border: black 1px solid;
+}
+
+.titulo {
+ margin: 5px;
+margin-block-start: 5px;
+align-self: end;
+}
+
+.crear {
+  
+   margin: 5px;
+   margin-right: 15px;
+   align-self: end;
+}
+
+a{
+   text-decoration: none;
+}

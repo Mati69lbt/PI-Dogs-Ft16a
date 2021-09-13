@@ -1,0 +1,57 @@
+.create{
+    border: 3px solid black;
+    width: 30vw;
+    margin: 5px;
+    text-align: left;
+    padding: 2vw;
+
+}
+
+.create{
+    display: inline-block
+}
+
+.li{
+    list-style: none;
+}
+
+.divocc{
+    margin: 2vw;
+}
+
+.equis{
+    display: flex;
+    justify-content: center;
+}
+
+.botonCrear{
+    text-align: center;
+}
+
+.error{
+    color: red;
+    font-size: 15px;
+    margin: 1px;
+}
+
+.nombre{
+    margin:5px
+}
+
+.pmin{
+    margin:5px
+}
+
+.pmax{
+    margin:5px
+}
+
+.amin{
+    margin:5px
+}
+.amax{
+    margin:5px
+}
+.ev{
+    margin:5px
+}

@@ -1,0 +1,14 @@
+.detalles {
+  border: 1px solid black;
+  margin: 5px;
+  width: 50vw;
+  height: 75%;
+  ;
+  
+  
+  
+}
+
+.alldetails {
+  display: inline-block;
+}

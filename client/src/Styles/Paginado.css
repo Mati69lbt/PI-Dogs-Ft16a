@@ -1,0 +1,13 @@
+.paginado {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding-inline-start: 0px;
+  }
+  .number {
+    margin: 1%;
+  
+  }
+  .pagNumber{
+    margin: 0.75%;
+  }

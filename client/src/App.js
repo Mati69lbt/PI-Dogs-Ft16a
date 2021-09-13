@@ -1,10 +1,23 @@
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./components/Home";
+import LandinPage from "./components/LandingPage";
+import DogCreate from "./components/dogCreate";
+import Detail from "./components/Detalles";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Dogs</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={LandinPage} />
+          <Route exact path="/home" component={Home} />
+          <Route path="/home/:id" component={Detail} />
+          <Route path="/dog" component={DogCreate} />
+          <h1>Queres Ver Muchos Perritos?!?!?!</h1>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

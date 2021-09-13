@@ -2,9 +2,8 @@ const { Router } = require("express");
 const router = Router();
 const { allInfo } = require("../controllers/get_dogs");
 
-router.get("/query", async (req, res) => {
-  const { name } = req.query;
-  console.log(`name: ${name}`);
+router.get("/", async (req, res) => {
+  const { name } = req.query;  
   try {
     const apiInfo = await allInfo();
     const nameDog = apiInfo.filter((element) =>
