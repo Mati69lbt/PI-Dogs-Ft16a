@@ -26,17 +26,30 @@ export default function DogCreate() {
   function handleSubmit(event) {
     event.preventDefault();
     dispatch(postDogs(input));
-    alert("Guao!! Guao!! Guao!!");
-    setInput({
-      name: "",
-      height_min: "",
-      height_max: "",
-      weight_max: "",
-      weight_min: "",
-      life_span: "",
-      temperament: [],
-    });
-    history.push("/home");
+    if (
+      Object.keys(errors).length === 0 &&
+      input.name !== "" &&
+      input.height_min !== "" &&
+      input.height_max !== "" &&
+      input.weight_min !== "" &&
+      input.weight_max !== "" &&
+      input.life_span !== "" &&
+      input.temperament.length !== 0
+    ) {
+      alert("Guao!! Guao!! Guao!!");
+      setInput({
+        name: "",
+        height_min: "",
+        height_max: "",
+        weight_max: "",
+        weight_min: "",
+        life_span: "",
+        temperaments: [],
+      });
+      history.push("/home");
+    } else {
+      alert("completar campos");
+    }
   }
 
   useEffect(() => {
@@ -79,7 +92,7 @@ export default function DogCreate() {
       </div>
 
       <div className="create">
-        <div>
+        <div className="title"> 
           <h1>Crea tu Perrito:</h1>
         </div>
 
@@ -91,7 +104,7 @@ export default function DogCreate() {
               value={input.name}
               name="name"
               placeholder="nombre"
-              autoComplete={false}
+              autoComplete="off"
               onChange={(e) => handleChange(e)}
             />
             {errors.name && <p className="error">{errors.name}</p>}
@@ -107,9 +120,8 @@ export default function DogCreate() {
               onChange={(e) => handleChange(e)}
             />
             <label> kgs.</label>
-          {errors.weight_min && <p className="error">{errors.weight_min}</p>}
+            {errors.weight_min && <p className="error">{errors.weight_min}</p>}
           </div>
-
 
           <div className="pmax">
             <label>Peso maximo: </label>
@@ -121,11 +133,10 @@ export default function DogCreate() {
               onChange={(e) => handleChange(e)}
             />
             <label> kgs. </label>
-          {errors.weight_max && <p className="error">{errors.weight_max}</p>}
+            {errors.weight_max && <p className="error">{errors.weight_max}</p>}
           </div>
 
-
-          <div className="amin"> 
+          <div className="amin">
             <label>Altura minima: </label>
             <input
               type="number"
@@ -135,9 +146,8 @@ export default function DogCreate() {
               onChange={(e) => handleChange(e)}
             />
             <label> cms.</label>
-          {errors.height_min && <p className="error">{errors.height_min}</p>}
+            {errors.height_min && <p className="error">{errors.height_min}</p>}
           </div>
-
 
           <div className="amax">
             <label>Altura maxima: </label>
@@ -149,9 +159,8 @@ export default function DogCreate() {
               onChange={(e) => handleChange(e)}
             />
             <label> cms.</label>
-          {errors.height_max && <p className="error">{errors.height_max}</p>}
+            {errors.height_max && <p className="error">{errors.height_max}</p>}
           </div>
-
 
           <div className="ev">
             <label>Esperanza de vida: </label>
@@ -163,11 +172,13 @@ export default function DogCreate() {
               onChange={(e) => handleChange(e)}
             />
             <label> años.</label>
-          {errors.life_span && <p className="error">{errors.life_span}</p>}
+            {errors.life_span && <p className="error">{errors.life_span}</p>}
           </div>
 
-
           <label>¿Como queres q sea tu Perrito? </label>
+              {errors.temperament && (
+                <p className="error">{errors.temperament}</p>
+              )}
           <select onChange={(e) => handleSelect(e)}>
             {alltemperaments?.map((temp) => (
               <option value={temp.name} key={temp.id}>

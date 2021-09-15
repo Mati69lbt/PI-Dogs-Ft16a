@@ -1,4 +1,10 @@
-.App {
+body{
+  background-color: #f49f1c;
+  
+  
+}
+App {
+  justify-content: center;
   text-align: center;
 }
 

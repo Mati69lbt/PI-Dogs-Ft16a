@@ -8,14 +8,13 @@ import Detail from "./components/Detalles";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={LandinPage} />
-          <Route exact path="/home" component={Home} />
-          <Route path="/home/:id" component={Detail} />
-          <Route path="/dog" component={DogCreate} />
-          <h1>Queres Ver Muchos Perritos?!?!?!</h1>
-        </Switch>
+     <div className="App" key="app">
+      <Switch>
+        <Route exact path="/" component={LandinPage} />
+        <Route exact path="/home" component={Home} />
+        <Route path="/home/:id" component={Detail} />
+        <Route path="/dog" component={DogCreate} />        
+      </Switch>
       </div>
     </BrowserRouter>
   );

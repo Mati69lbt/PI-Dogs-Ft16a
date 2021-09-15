@@ -15,17 +15,8 @@ router.post("/", async (req, res) => {
     madeInDB,
   } = req.body;
   try {
-    if (
-      !name &&
-      !height_min &&
-      !height_max &&
-      !weight_max &&
-      !weight_min &&
-      !life_span
-    ) {
-      res.send(alert("Faltan campos por completar"));
-    } else {
-      const dogCreated = await Dog.create({
+    
+      const createDog = await Dog.create({
         id: uuidv4(),
         name,
         height_min,
@@ -35,10 +26,12 @@ router.post("/", async (req, res) => {
         life_span,
         madeInDB,
       });
-    }
-    temperament.map((temp) => {
-      dogCreated.setTemperaments(temp);
-    });
+    
+    let tempDB = await Temperament.findAll({
+      where : { name: temperament}
+    })
+    createDog.addTemperament(tempDB)
+
     res.send("perrito creado con exito");
   } catch (error) {
     console.log(error);

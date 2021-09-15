@@ -1,6 +1,8 @@
 
+   
+
 .cardstwo{  
-   border: 3px red;
+ 
    display: flex;
    flex-wrap: wrap;
    margin: 5px;
@@ -12,7 +14,7 @@
 .paquetes{
    display: flex;
    justify-content: center;
-   border: 1px solid red;
+   border: 4px solid rgb(0, 0, 0);
    
 }
 
@@ -47,14 +49,16 @@
 
 .arriba{
    display: flex;
-   justify-content: center;
-   border: black 1px solid;
+   justify-content: space-around;
+   border: 4px solid black;
 }
 
 .titulo {
  margin: 5px;
 margin-block-start: 5px;
 align-self: end;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: #00154f
 }
 
 .crear {
@@ -62,6 +66,7 @@ align-self: end;
    margin: 5px;
    margin-right: 15px;
    align-self: end;
+   
 }
 
 a{

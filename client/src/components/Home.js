@@ -75,11 +75,10 @@ export default function Home() {
 
         </div>
         </Link>
-        <div className="titulo"  onClick={(element) => {
-            handClick(element);
-          }}>
+        <div className="titulo" key="titulo" >
       <h1>MUCHOS, MUCHOS PERRITOS!!!</h1>
         </div>
+       
         {/* <button
           onClick={(element) => {
             handClick(element);
@@ -93,19 +92,19 @@ export default function Home() {
 
       <div className="paquetes">
         
-          <div className="ordenABC" onClick={(element) => handleSort(element)}>
+          <div className="ordenABC" key="ordenABC" onClick={(element) => handleSort(element)}>
             <h4>Orden ABC: </h4>
             <button value="asc">A - Z </button>
             <button value="desc">Z - A </button>
           </div>
         
-        <div className="ordenkgs" onClick={(element) => handleSortKGS(element)}>
+        <div className="ordenkgs" key="ordenkgs" onClick={(element) => handleSortKGS(element)}>
           <h4>Orden Kgs: </h4>
           <button value="asc"> + kg </button>
           <button value="desc"> - kg </button>
         </div>
 
-        <div className="filtertemp">
+        <div className="filtertemp" key="filtertemp">
           <h4>Como queres que yo sea? </h4>
           <select onChange={(event) => handleFilterTemp(event)}>
             <option value="All" key="All">
@@ -122,7 +121,7 @@ export default function Home() {
           </select>
           </div>
 
-          <div className="creados" onClick={(element) => handleFilterCreados(element)}>
+          <div className="creados" key= "creados" onClick={(element) => handleFilterCreados(element)}>
             <h4>Cuatro Patitas: </h4>
             <button value="api">Los Nuestros</button>
             <button value="created">Creados por TÍ</button>
@@ -135,7 +134,7 @@ export default function Home() {
         </div>
      
 
-      <div>
+      <div className="paginado" key="paginado">
         <Paginado
           dogsPerPage={dogsPerPage}
           allDogs={allDogs.length}
@@ -143,7 +142,7 @@ export default function Home() {
         />
       </div>
     
-        <div className="cardstwo">
+        <div className="cardstwo" key="cardstwo">
           {currentDogs?.map((element) => {
             return (
               <Link to={`/home/${element.id}`}>

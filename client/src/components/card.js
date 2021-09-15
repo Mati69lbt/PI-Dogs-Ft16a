@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/Cards.css";
-import { Link } from "react-router-dom";
+
 
 export default function Card({
   id,
@@ -14,7 +14,7 @@ export default function Card({
 }) {
   return (
     <div className="allcards" key={id}>
-      <p>
+      
         <div className="cartas">
           <h3>Yo soy {name}!!!</h3>
 
@@ -26,7 +26,7 @@ export default function Card({
 
           
         </div>
-      </p>
+      
     </div>
   );
 }

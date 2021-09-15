@@ -1,0 +1,12 @@
+
+componente principal = index.js general (este envuelve al app.js)   
+el provider hace que el store tome todos los componentes anidados
+
+el app.js envuelve todas las rutas que estan en el componente
+
+desde app vamos a culquier ruta que querramos, ej home
+
+ej: de una function
+cuando clicleamos un boton, este va disparar una funcion que es importada de las actions
+
+home - actions => app.js => index.js gral => este tiene el store => tiene el reduceer 

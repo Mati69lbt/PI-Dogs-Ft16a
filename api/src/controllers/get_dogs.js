@@ -14,12 +14,12 @@ const infoApi = async () => {
         weight_min:
           weight[0] !== "NaN"
             ? weight[0]
-            : parseInt(weight[2]) - 1 ,
+            : parseInt(weight[2]) - 1 || "(no registra datos)",
         weight_max:
         weight[2] === undefined ? weight[0] :
           weight[2] !== "NaN"
             ? weight[2]
-            : parseInt(weight[0]) + 1 ,
+            : parseInt(weight[0]) + 1 || "(no registra datos)" ,
 
         height_min: element.height.metric.split("-")[0] ,
         height_max: element.height.metric.split("-")[1]
