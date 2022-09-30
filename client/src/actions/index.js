@@ -2,30 +2,44 @@ import axios from "axios";
 const url = "http://localhost:3001/";
 
 export function getDogs() {
+
   return async function (dispatch) {
+
     var json = await axios.get(`${url}dogs`, {});
+    console.log(json.data);
+    json = json.data.map(element => {
+      if (Array.isArray(element.temperaments)) {
+        const arrayTemperaments = element.temperaments.map(element => " " + element.name)
+       element.temperaments = arrayTemperaments.toString().trim()
+      
+       return element
+      }
+      else return element
+      
+    })
     return dispatch({
       type: "GET_DOGS",
-      payload: json.data,
+      payload: json
     });
   };
 }
 
 export function getTemperaments() {
-  return async function (dispatch) {
-    try {
-      var info = await axios.get(`${url}temperament`, {});
+  return  function (dispatch) {
+    
 
-      return dispatch({
-        type: "GET_TEMPERAMENTS",
-        payload: info.data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+     return axios.get(`${url}temperament`, {})
+     .then((responseAxios) => {
+       return dispatch({
+         type: "GET_TEMPERAMENTS",
+         payload: responseAxios.data,
+       });
+
+     })
+
+    
 }
-
+}
 export function Details(id) {
   return async function (dispatch) {
     try {
@@ -57,8 +71,7 @@ export function orderKGS(payload) {
 export function getDogsNames(name) {
   return async function (dispatch) {
     try {
-      var json = await axios.get(`${url}dogs/query?name=${name}`, {});
-      console.log(`............${json}`);
+      var json = await axios.get(`${url}dogs/query?name=${name}`, {});      
       return dispatch({
         type: "GET_DOGS_NAMES",
         payload: json.data,
@@ -93,3 +106,27 @@ export function filterbyTemp(payload) {
     dispatch({ type: "FILTRO_TEMP", payload: payload });
   };
 }
+
+
+
+
+
+
+
+
+
+
+// export function getTemperaments() {
+//   return async function (dispatch) {
+//     try {
+//       var info = await axios.get(`${url}temperament`, {});
+
+//       return dispatch({
+//         type: "GET_TEMPERAMENTS",
+//         payload: info.data,
+//       });
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+// }

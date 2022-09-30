@@ -18,9 +18,9 @@ export default function validate(input) {
      if(!input.life_span){
         error.life_span = "¿y su esperanza de vida?"
     }
-     if(input.temperament.length < 1){
-        error.temperament = "¿y como es?"
-    }
+    //  if(input.temperament.length === 0){
+    //     error.temperament = "¿y como es?"
+    // }
     return error   
 }
 

@@ -2,11 +2,12 @@
   border: 2px solid black;
   margin: 5px;
   width: 20vw;
-  height: 28vw;
-  text-decoration: none;
+  height: 28vw;  
   color: black;
   font-family: sans-serif;
-  
+  display: grid;
+  text-align: center;   
+  justify-items: center;
 }
 
 

@@ -91,34 +91,18 @@ function rootReducer(state = initialState, action) {
         dogs: dogsCreate,
       };
 
-    case "FILTRO_TEMP":
-      // const allDogs = state.dogs;
-      // const temperamentFiltered =
-      //   action.payload === "All"
-      //     ? allDogs
-      //     : allDogs.filter(
-      //         (el) =>
-      //           el.temperament.name &&
-      //           el.temperament.find((e) => e.name === action.payload)
-      //       );
-
-      // return {
-      //   ...state,
-      //   dogs: temperamentFiltered,
-      // };
-      console.log(`.................${action.payload}`);
+    case "FILTRO_TEMP":     
       const allDogs = state.alldogs;
-      const tempDogs = allDogs?.map((e) => {
-        return { ...e, temperaments: e.temperaments?.map((e) => e.name) };
-      });
+      // const tempDogs = allDogs?.map((e) => {
+      //   console.log(e.temperaments);
+      //   return { ...e, temperaments: e.temperaments?.map((e) => e.name) };
+      // });
       const temperamentsFiltered =
         action.payload === "All"
           ? allDogs
-          : tempDogs?.filter((e) => {
-              return e.temperament?.includes(action.payload);
-            });
-      console.log(`temperamentsFiltered.......${temperamentsFiltered}`);
-      console.log(`tempDogs.......${tempDogs.length}`);
+          : allDogs?.filter((e) => {
+              return e.temperaments?.includes(action.payload);
+            });      
       return {
         ...state,
         dogs: temperamentsFiltered,
@@ -129,3 +113,23 @@ function rootReducer(state = initialState, action) {
 }
 
 export default rootReducer;
+
+
+
+
+// case "FILTRO_TEMP":     
+//       const allDogs = state.alldogs;
+//       const tempDogs = allDogs?.map((e) => {
+//         console.log(e.temperaments);
+//         return { ...e, temperaments: e.temperaments?.map((e) => e.name) };
+//       });
+//       const temperamentsFiltered =
+//         action.payload === "All"
+//           ? allDogs
+//           : tempDogs?.filter((e) => {
+//               return e.temperaments?.includes(action.payload);
+//             });      
+//       return {
+//         ...state,
+//         dogs: temperamentsFiltered,
+//       };

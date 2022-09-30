@@ -6,7 +6,9 @@
     /* padding: 2vw; */
 
 }
-
+.back{
+    padding: 15px;
+}
 .create{
     display: inline-block
 }
@@ -54,4 +56,8 @@
 }
 .ev{
     margin:5px
+}
+.allcreate{
+    display: grid;
+    justify-items: center;
 }

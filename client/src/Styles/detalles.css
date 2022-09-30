@@ -1,15 +1,19 @@
 .detalles {
-  border: 1px solid black;
+  
   margin: 5px;
   width: 50vw;
   height: 75%;
-  ;
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  
   
   
   
 }
 
 .alldetails {
-  display: inline-block;
+  display: grid;
+  justify-items: center;
 }
 

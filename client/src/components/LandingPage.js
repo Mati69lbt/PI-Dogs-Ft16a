@@ -5,7 +5,7 @@ import "../Styles/landingpage.css";
 export default function LandingPage() {
   return (
     <div className="fondo">
-      <div className="titulolp" key="titulo">
+      <div className="titulolp">
         <h1>¡¡¡ Los Pichichus !!!</h1>
       </div>
       <Link to="/home">

@@ -44,7 +44,7 @@ export default function DogCreate() {
         weight_max: "",
         weight_min: "",
         life_span: "",
-        temperaments: [],
+        temperament: [],
       });
       history.push("/home");
     } else {
@@ -69,7 +69,7 @@ export default function DogCreate() {
     );
   };
 
-  function handleSelect(e) {
+  function handleSelect(e) {   
     setInput({
       ...input,
       temperament: [...input.temperament, e.target.value],
@@ -85,14 +85,14 @@ export default function DogCreate() {
 
   return (
     <div className="allcreate">
-      <div>
+      <div className="back">
         <Link to="/home">
           <button>Los Perritos nos extrañan!!!</button>
         </Link>
       </div>
 
       <div className="create">
-        <div className="title"> 
+        <div className="title">
           <h1>Crea tu Perrito:</h1>
         </div>
 
@@ -176,9 +176,7 @@ export default function DogCreate() {
           </div>
 
           <label>¿Como queres q sea tu Perrito? </label>
-              {errors.temperament && (
-                <p className="error">{errors.temperament}</p>
-              )}
+          {errors.temperament && <p className="error">{errors.temperament}</p>}
           <select onChange={(e) => handleSelect(e)}>
             {alltemperaments?.map((temp) => (
               <option value={temp.name} key={temp.id}>
@@ -192,7 +190,9 @@ export default function DogCreate() {
               <li>{input.temperament?.map((element) => element + " ,")}</li>
             </div>
           </ul>
-
+          <div className="botonnuevo">
+            <button type="submit">Nuevo Perrito</button>
+          </div>
           <div className="botonCrear">
             <button type="submit">Nuevo Perrito</button>
           </div>
@@ -200,8 +200,8 @@ export default function DogCreate() {
       </div>
 
       <div className="equis">
-        {input.temperament?.map((el) => (
-          <div className="divocc">
+        {input.temperament?.map((el, i) => (
+          <div className="divocc" key={i}>
             <p>{el}</p>
             <button className="botonX" onClick={() => handleDelete(el)}>
               X

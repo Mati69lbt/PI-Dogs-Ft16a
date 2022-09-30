@@ -11,11 +11,11 @@ export default function Paginado({ dogsPerPage, allDogs, paginado }) {
 
   return (
     <nav>
-      <ul className="paginado" key="paginado">
+      <ul className="paginado" >
         {pageNumbers &&
-          pageNumbers.map((number) => (
-            <button className="pagNumber" key="pagNumber">
-            <li className="number" key={Math.random(number)}>
+          pageNumbers.map((number, i) => (
+            <button className="pagNumber" key={i}>
+            <li className="number">
               <a href onClick={() => paginado(number)}>{number}</a>
             </li>
             </button>

@@ -7,7 +7,7 @@ const gettemperament = async () => {
   try {
     const temperamentA = await allInfo();
 
-    const temperamentB = temperamentA.map((element) => element.temperament).toString();
+    const temperamentB = temperamentA.map((element) => element.temperaments).toString();
 
     const temperamentC = new Set(temperamentB.split(","))// 
 

@@ -26,14 +26,16 @@ export default function Detail(props) {
               width="300px"
               height="300px"
             />
-            <h3>Puedo llegar a pesar hasta {dog[0].weight_max} kgs</h3>
-            <h3>y medir hasta {dog[0].height_max} cms</h3>
-            <h4>
-              me gusta ser:{" "}
+            <h3>Puedo llegar a pesar hasta {dog[0].weight_max} kgs,</h3>
+            <h3> medir hasta {dog[0].height_max} cms</h3>
+            <h3>y estar contigo {dog[0].life_span}.</h3>
+            <h3>
+              Me gusta ser:{" "}
+              
               {!dog[0].madeInDB
-                ? dog[0].temperament + ", "
-                : dog[0].temperaments.map((element) => element.name + " ")}{" "}
-            </h4>
+                ? dog[0].temperaments + ", "
+                : dog[0].temperaments.map((element) => element.name + ", ")}{" "}
+            </h3>
           </div>
         ) : (
           <p>Loading...</p>

@@ -1,4 +1,6 @@
-
+body{
+   background-color: #f49f1c;
+}
    
 
 .cardstwo{  
@@ -62,8 +64,8 @@ color: #00154f
 }
 
 .crear {
-  
-   margin: 5px;
+   margin-top: 30px;
+   /* margin: 5px; */
    margin-right: 15px;
    align-self: end;
    
